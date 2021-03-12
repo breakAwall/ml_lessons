@@ -10,7 +10,7 @@ import pandas as pd
 import joblib
 
 ## TODO: Import any additional libraries you need to define a model
-
+from sklearn.svm import SVC
 
 # Provided model load function
 def model_fn(model_dir):
@@ -42,6 +42,7 @@ if __name__ == '__main__':
     parser.add_argument('--data-dir', type=str, default=os.environ['SM_CHANNEL_TRAIN'])
     
     ## TODO: Add any additional arguments that you will need to pass into your model
+    parser.add_argument('--regularization', type=int, default=1)
     
     # args holds all passed-in arguments
     args = parser.parse_args()
@@ -56,14 +57,12 @@ if __name__ == '__main__':
     
     
     ## --- Your code here --- ##
-    
-
+    ## Using SVM with rbf kernel
     ## TODO: Define a model 
-    model = None
-    
+    model = SVC(kernel="rbf", C=args.regularization)
     
     ## TODO: Train the model
-    
+    model.fit(train_x, train_y)
     
     
     ## --- End of your code  --- ##
