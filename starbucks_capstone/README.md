@@ -13,11 +13,11 @@
 
 <ins>selected_model_eval.ipynb</ins>: This file contains code for running cross validation on teh selected model as well as analyzing its output in terms of what it got right and wrong.
 
-<ins>data/</ins>: This director contains all the data files as csv (provided and intermediate ones created by me
+<ins>data/</ins>: This director contains all the data files (provided are in json and intermediate ones created by me are csv)
 
 ### Setup and Data Retreival
 No special Setup is needed and all the raw data is in the data directory as
 
-profile.csv
-portfolio.csv
-transcript.csv
+profile.json
+portfolio.json
+transcript.json
